@@ -27,7 +27,7 @@ jobs:
         run: npx tsc --noEmit
 
       - name: ESLint
-        run: npx eslint src --max-warnings 10
+        run: npx next lint --max-warnings 10
 
       - name: Build check
         run: npm run build
