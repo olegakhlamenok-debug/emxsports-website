@@ -1,0 +1,28 @@
+# EMX Sports Website - Cursor Rules
+
+## Project
+Boxing promotion website for EMX Sports (emxsports.com)
+Stack: Next.js 14, TypeScript, Tailwind CSS
+
+## Brand
+- Primary: #c41e3a (red)
+- Gold: #d4a017
+- Dark: #0a0a0a
+- Font headings: Oswald
+- Font body: Inter
+
+## Code Style
+- Use TypeScript strict mode
+- Functional components only, no class components
+- Tailwind for all styling, no CSS modules
+- shadcn/ui patterns where applicable
+- File naming: PascalCase for components, kebab-case for pages/utils
+
+## Fighters
+Active roster: Jevgenijs Aleksejevs (20-0-0), Milans Volkovs (12-4-2), Karen Chukhadzhian
+
+## Workflow
+- All changes through feature branches
+- Test on GitHub Pages before production deploy
+- Run `npm run build` before committing
+- Keep components small and focused

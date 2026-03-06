@@ -1,0 +1,56 @@
+name: 🚀 Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type DEPLOY to confirm production deploy"
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to emxsports.com
+    if: github.event_name == 'push' || github.event.inputs.confirm == 'DEPLOY'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_ENV: production
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: 38.180.217.53
+          username: emxsports_co_usr67
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/emxsports_co_usr67/data/www/emxsports.com
+            # backup current
+            cp -r . ../emxsports_backup_$(date +%Y%m%d_%H%M%S) 2>/dev/null || true
+            echo "Deployed at $(date)"
+
+      - name: Upload built files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 38.180.217.53
+          username: emxsports_co_usr67
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "out/*"
+          target: "/var/www/emxsports_co_usr67/data/www/emxsports.com"
+          strip_components: 1
