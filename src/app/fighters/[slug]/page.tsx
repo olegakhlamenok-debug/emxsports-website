@@ -7,8 +7,13 @@ export function generateStaticParams() {
   return fighters.map((f) => ({ slug: f.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const fighter = getFighterBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const fighter = getFighterBySlug(slug);
   if (!fighter) return { title: "Fighter Not Found" };
   return {
     title: `${fighter.name} — EMX Sports`,
@@ -16,8 +21,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function FighterPage({ params }: { params: { slug: string } }) {
-  const fighter = getFighterBySlug(params.slug);
+export default async function FighterPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const fighter = getFighterBySlug(slug);
   if (!fighter) notFound();
 
   const { wins, losses, draws } = fighter.record;
@@ -67,15 +77,23 @@ export default function FighterPage({ params }: { params: { slug: string } }) {
 
               {/* Record stats */}
               <div className="flex items-baseline gap-6 mb-6">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-[#c41e3a] font-heading text-xs tracking-widest">●</span>
-                  <span className="font-heading font-bold text-4xl text-white">{wins}</span>
+                <div className="text-center">
+                  <div className="font-heading font-bold text-4xl text-white">{wins}</div>
+                  <div className="text-gray-600 text-[10px] font-heading tracking-widest uppercase mt-1">
+                    Wins
+                  </div>
                 </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="font-heading font-bold text-4xl text-white">{losses}</span>
+                <div className="text-center">
+                  <div className="font-heading font-bold text-4xl text-white">{losses}</div>
+                  <div className="text-gray-600 text-[10px] font-heading tracking-widest uppercase mt-1">
+                    Losses
+                  </div>
                 </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="font-heading font-bold text-4xl text-white">{draws}</span>
+                <div className="text-center">
+                  <div className="font-heading font-bold text-4xl text-white">{draws}</div>
+                  <div className="text-gray-600 text-[10px] font-heading tracking-widest uppercase mt-1">
+                    Draws
+                  </div>
                 </div>
               </div>
 
@@ -150,7 +168,11 @@ export default function FighterPage({ params }: { params: { slug: string } }) {
         </h2>
         <div className="grid grid-cols-3 gap-px bg-gray-800">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="bg-[#0a0a0a] relative overflow-hidden group" style={{ height: 200 }}>
+            <div
+              key={i}
+              className="bg-[#0a0a0a] relative overflow-hidden group"
+              style={{ height: 200 }}
+            >
               <img
                 src={fighter.imageAction}
                 alt={`${fighter.name} media ${i}`}
