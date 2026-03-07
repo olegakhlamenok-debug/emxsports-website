@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Events from "@/components/Events";
 import Fighters from "@/components/Fighters";
 import Results from "@/components/Results";
 import About from "@/components/About";
@@ -13,7 +12,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <Events />
+      {/* <Events /> */}
       <Fighters />
       <Results />
       <About />
