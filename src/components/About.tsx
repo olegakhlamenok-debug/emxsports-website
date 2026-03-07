@@ -14,7 +14,7 @@ export default function About() {
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-start">
           {/* Text — 3 cols */}
           <div className="lg:col-span-3">
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white leading-[0.9] mb-8 sm:mb-10">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white leading-[0.9] mb-8 sm:mb-10 text-center">
               About<br />
               <span className="text-gray-500">EMX Sports</span>
             </h2>
@@ -42,8 +42,8 @@ export default function About() {
           <div className="lg:col-span-2">
             <div className="grid grid-cols-2 gap-[1px] bg-gray-800/50">
               {stats.map(({ value, label }) => (
-                <div key={label} className="bg-[#0a0a0a] p-6 sm:p-8 text-center group">
-                  <div className="font-heading font-bold text-4xl sm:text-5xl text-white group-hover:text-[#c41e3a] transition-colors duration-300 mb-1">
+                <div key={label} className="bg-[#0a0a0a] p-6 sm:p-8 text-center group hover:bg-[#111] transition-all duration-300">
+                  <div className="font-heading font-bold text-4xl sm:text-5xl text-white group-hover:text-[#c41e3a] group-hover:scale-110 transition-all duration-300 mb-1">
                     {value}
                   </div>
                   <div className="text-gray-600 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-heading">

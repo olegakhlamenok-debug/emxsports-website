@@ -6,11 +6,11 @@ export default function Fighters() {
   return (
     <section id="fighters" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 sm:mb-14 flex items-end justify-between">
+        <div className="mb-10 sm:mb-14 text-center">
           <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white">
             Our Fighters
           </h2>
-          <span className="hidden sm:block text-gray-600 font-heading text-xs tracking-[0.2em] uppercase">
+          <span className="hidden sm:block text-gray-600 font-heading text-xs tracking-[0.2em] uppercase mt-4">
             View Full Roster →
           </span>
         </div>
@@ -20,7 +20,7 @@ export default function Fighters() {
             <Link
               key={fighter.slug}
               href={`/fighters/${fighter.slug}/`}
-              className="bg-[#0a0a0a] group block"
+              className="bg-[#0a0a0a] group block transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1"
             >
               <div className="relative overflow-hidden" style={{ minHeight: 420 }}>
                 <img

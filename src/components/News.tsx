@@ -25,7 +25,7 @@ export default function News() {
   return (
     <section id="news" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14">
+        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14 text-center">
           Latest Media
         </h2>
 
@@ -34,7 +34,7 @@ export default function News() {
             <Link
               key={article.title}
               href="#"
-              className="bg-[#0a0a0a] group block"
+              className="bg-[#0a0a0a] group block transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1"
             >
               <div className="relative overflow-hidden" style={{ minHeight: 280 }}>
                 <img

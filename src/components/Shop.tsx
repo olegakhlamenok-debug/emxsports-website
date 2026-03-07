@@ -32,13 +32,13 @@ export default function Shop() {
   return (
     <section id="shop" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 sm:mb-14 flex items-end justify-between">
+        <div className="mb-10 sm:mb-14 text-center">
           <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white">
             Shop
           </h2>
           <Link
             href="#"
-            className="hidden sm:block text-gray-600 hover:text-white font-heading text-xs tracking-[0.2em] uppercase transition-colors"
+            className="hidden sm:inline-block text-gray-600 hover:text-white font-heading text-xs tracking-[0.2em] uppercase transition-colors mt-4"
           >
             View All →
           </Link>
@@ -49,7 +49,7 @@ export default function Shop() {
             <Link
               key={product.name}
               href="#"
-              className="group block bg-[#111] hover:bg-[#161616] transition-colors duration-300"
+              className="group block bg-[#111] hover:bg-[#161616] transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-2"
             >
               {/* Product image */}
               <div className="relative overflow-hidden aspect-square">

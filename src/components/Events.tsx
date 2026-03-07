@@ -41,7 +41,7 @@ function EventCard({
   large?: boolean;
 }) {
   return (
-    <Link href="#" className="block group relative overflow-hidden">
+    <Link href="#" className="block group relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1">
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
         style={{ backgroundImage: `url('${event.image}')` }}
@@ -110,7 +110,7 @@ export default function Events() {
     <section id="events" className="pt-8 pb-20 sm:pt-12 sm:pb-28 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
-        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-8 sm:mb-12">
+        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-8 sm:mb-12 text-center">
           Upcoming Events
         </h2>
 
