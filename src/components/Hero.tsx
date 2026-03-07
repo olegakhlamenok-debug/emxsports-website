@@ -5,7 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden py-24 sm:py-32 md:py-36">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
