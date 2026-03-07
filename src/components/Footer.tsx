@@ -32,7 +32,7 @@ export default function Footer() {
               <img
                 src={`${basePath}/images/logo.png`}
                 alt="EMX Sports"
-                className="h-12"
+                className="h-16"
               />
             </div>
             <ul className="space-y-2.5">

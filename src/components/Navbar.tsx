@@ -33,13 +33,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 sm:h-24">
+        <div className="flex items-center justify-between h-20 sm:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <img
               src={`${basePath}/images/logo.png`}
               alt="EMX Sports"
-              className="h-10 sm:h-14"
+              className="h-14 sm:h-18"
             />
           </Link>
 

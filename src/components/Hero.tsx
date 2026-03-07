@@ -22,7 +22,7 @@ export default function Hero() {
         <img
           src={`${basePath}/images/logo.png`}
           alt="EMX Sports"
-          className="h-32 sm:h-44 md:h-56 mx-auto mb-4 drop-shadow-2xl"
+          className="h-40 sm:h-56 md:h-72 lg:h-80 mx-auto mb-6 drop-shadow-2xl"
         />
 
         <p className="text-gray-400 text-sm sm:text-base tracking-[0.3em] uppercase font-heading mb-12 sm:mb-16">
