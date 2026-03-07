@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const navLinks = [
   { href: "#", label: "Home" },
   { href: "#events", label: "Events" },
@@ -21,23 +23,24 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-gray-800/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid sm:grid-cols-3 gap-12">
-          {/* Nav links — red like Matchroom */}
+    <footer className="bg-[#060606] border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12">
+          {/* Nav links — red */}
           <div>
-            {/* Logo mark */}
-            <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 bg-white flex items-center justify-center">
-                <span className="text-[#0a0a0a] font-heading font-bold text-xs">EMX</span>
-              </div>
+            <div className="mb-6 sm:mb-8">
+              <img
+                src={`${basePath}/images/logo.png`}
+                alt="EMX Sports"
+                className="h-8"
+              />
             </div>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="font-heading font-bold text-sm text-[#c41e3a] hover:text-white uppercase tracking-wider transition-colors"
+                    className="font-heading font-bold text-xs text-[#c41e3a] hover:text-white uppercase tracking-[0.15em] transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -48,11 +51,11 @@ export default function Footer() {
 
           {/* Office info */}
           <div>
-            <h4 className="font-heading font-bold text-xs text-gray-500 uppercase tracking-widest mb-6">
+            <h4 className="font-heading font-bold text-[10px] text-gray-600 uppercase tracking-[0.25em] mb-5 sm:mb-6">
               Office
             </h4>
             <div className="text-gray-500 text-sm space-y-1 leading-relaxed">
-              <p>EMX Sports</p>
+              <p className="text-gray-400">EMX Sports</p>
               <p>Riga, Latvia</p>
               <p className="mt-4">
                 <a
@@ -75,13 +78,13 @@ export default function Footer() {
 
           {/* Social */}
           <div className="flex sm:justify-end items-start">
-            <div className="flex gap-4">
+            <div className="flex gap-5">
               {socials.map(({ icon: Icon, href, label }) => (
                 <Link
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="text-gray-500 hover:text-white transition-colors"
+                  className="text-gray-600 hover:text-white transition-colors duration-300"
                 >
                   <Icon size={18} />
                 </Link>
@@ -92,16 +95,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-gray-800/30 py-6">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-700 text-xs tracking-wider">
+      <div className="border-t border-white/5 py-5 sm:py-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-gray-700 text-[10px] sm:text-xs tracking-wider">
             © 2026 EMX Sports. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-gray-700 hover:text-gray-500 text-xs tracking-wider transition-colors">
+          <div className="flex gap-5 sm:gap-6">
+            <Link href="#" className="text-gray-700 hover:text-gray-400 text-[10px] sm:text-xs tracking-wider transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-gray-700 hover:text-gray-500 text-xs tracking-wider transition-colors">
+            <Link href="#" className="text-gray-700 hover:text-gray-400 text-[10px] sm:text-xs tracking-wider transition-colors">
               Terms &amp; Conditions
             </Link>
           </div>

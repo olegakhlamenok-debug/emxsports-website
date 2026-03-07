@@ -30,54 +30,54 @@ const products = [
 
 export default function Shop() {
   return (
-    <section id="shop" className="py-20 bg-[#0a0a0a]">
+    <section id="shop" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex items-end justify-between">
-          <h2 className="font-heading font-bold text-5xl sm:text-6xl uppercase text-white">
+        <div className="mb-10 sm:mb-14 flex items-end justify-between">
+          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white">
             Shop
           </h2>
           <Link
             href="#"
-            className="hidden sm:block text-gray-500 hover:text-white font-heading text-xs tracking-widest uppercase transition-colors"
+            className="hidden sm:block text-gray-600 hover:text-white font-heading text-xs tracking-[0.2em] uppercase transition-colors"
           >
             View All →
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-800">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {products.map((product) => (
             <Link
               key={product.name}
               href="#"
-              className="bg-[#0a0a0a] group block"
+              className="group block bg-[#111] hover:bg-[#161616] transition-colors duration-300"
             >
               {/* Product image */}
-              <div className="relative overflow-hidden aspect-square bg-[#111]">
+              <div className="relative overflow-hidden aspect-square">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                 />
                 {product.tag && (
-                  <div className="absolute top-3 left-3 bg-[#c41e3a] text-white font-heading text-[10px] tracking-widest uppercase px-2 py-1">
-                    {product.tag}
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-[#c41e3a] text-white font-heading text-[9px] tracking-[0.2em] uppercase px-2.5 py-1">
+                      {product.tag}
+                    </span>
                   </div>
                 )}
               </div>
 
               {/* Product info */}
-              <div className="p-4">
-                <h3 className="font-heading font-bold text-sm uppercase text-white leading-tight mb-2">
+              <div className="p-4 sm:p-5">
+                <h3 className="font-heading font-bold text-xs sm:text-sm uppercase text-white leading-tight mb-2 min-h-[2.5em]">
                   {product.name}
                 </h3>
-                <div className="text-gray-400 font-heading text-sm">
+                <div className="text-gray-500 font-heading text-xs sm:text-sm mb-3 sm:mb-4">
                   {product.price}
                 </div>
-                <div className="mt-3">
-                  <span className="inline-block bg-[#c41e3a] hover:bg-[#a01830] text-white font-heading text-[10px] tracking-widest uppercase px-4 py-2 transition-colors">
-                    Select Options
-                  </span>
-                </div>
+                <span className="inline-block bg-[#c41e3a] hover:bg-[#a01830] text-white font-heading text-[9px] sm:text-[10px] tracking-[0.15em] uppercase px-3 sm:px-4 py-2 transition-colors">
+                  Select Options
+                </span>
               </div>
             </Link>
           ))}

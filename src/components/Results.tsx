@@ -18,53 +18,86 @@ const results = [
   },
 ];
 
+const methodColor: Record<string, string> = {
+  KO: "text-[#c41e3a]",
+  TKO: "text-[#c41e3a]",
+  UD: "text-blue-400",
+  SD: "text-yellow-400",
+};
+
 export default function Results() {
   return (
-    <section id="results" className="py-20 bg-[#0a0a0a]">
+    <section id="results" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex items-end justify-between">
-          <h2 className="font-heading font-bold text-5xl sm:text-6xl uppercase text-white">
-            Latest Results
-          </h2>
-          <span className="hidden sm:block text-gray-500 font-heading text-xs tracking-widest uppercase">
-            See Fight Night #8 →
-          </span>
-        </div>
+        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14">
+          Latest Results
+        </h2>
 
-        <div className="space-y-8">
+        <div className="space-y-10 sm:space-y-12">
           {results.map((event, ei) => (
             <div key={ei}>
-              <div className="flex items-center gap-4 mb-3">
+              {/* Event header */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
                 <span className="text-gray-500 font-heading text-sm tracking-wider">
                   {event.date}
                 </span>
-                <div className="h-px flex-1 bg-gray-800" />
-                <span className="text-gray-600 font-heading text-xs tracking-widest uppercase">
+                <div className="hidden sm:block h-px flex-1 bg-gray-800/50" />
+                <span className="text-gray-600 font-heading text-xs tracking-[0.2em] uppercase">
                   {event.event}
                 </span>
               </div>
-              <div className="space-y-px">
+
+              {/* Bouts */}
+              <div className="space-y-[1px]">
                 {event.bouts.map((bout, bi) => (
                   <div
                     key={bi}
-                    className="bg-[#111] px-6 py-5 flex flex-wrap gap-4 items-center justify-between hover:bg-[#161616] transition-colors"
+                    className="bg-[#111] hover:bg-[#161616] transition-colors duration-300"
                   >
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <span className="font-heading font-bold text-xl text-white uppercase">
-                        {bout.winner}
-                      </span>
-                      <span className="text-gray-600 text-xs font-heading">{bout.winnerRec}</span>
-                      <span className="text-gray-600 font-heading text-sm">def.</span>
-                      <span className="font-heading text-lg text-gray-500 uppercase">
-                        {bout.loser}
-                      </span>
-                      <span className="text-gray-700 text-xs font-heading">{bout.loserRec}</span>
+                    {/* Desktop layout */}
+                    <div className="hidden sm:flex px-6 py-5 items-center justify-between">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <span className="font-heading font-bold text-lg sm:text-xl text-white uppercase">
+                          {bout.winner}
+                        </span>
+                        <span className="text-gray-600 text-xs font-heading">{bout.winnerRec}</span>
+                        <span className="text-gray-600 font-heading text-xs mx-1">def.</span>
+                        <span className="font-heading text-base sm:text-lg text-gray-500 uppercase">
+                          {bout.loser}
+                        </span>
+                        <span className="text-gray-700 text-xs font-heading">{bout.loserRec}</span>
+                      </div>
+                      <div className="flex items-center gap-3 flex-shrink-0 ml-4">
+                        <span className={`font-heading font-bold text-sm ${methodColor[bout.method] ?? "text-white"}`}>
+                          {bout.method}
+                        </span>
+                        <span className="text-gray-600 text-xs font-heading">{bout.round}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <span className="font-heading font-bold text-sm text-[#c41e3a]">
-                        {bout.method}
-                      </span>
-                      <span className="text-gray-600 text-xs font-heading">{bout.round}</span>
+
+                    {/* Mobile layout — stacked */}
+                    <div className="sm:hidden px-5 py-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <div>
+                          <span className="font-heading font-bold text-base text-white uppercase">
+                            {bout.winner}
+                          </span>
+                          <span className="text-gray-600 text-xs font-heading ml-2">{bout.winnerRec}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className={`font-heading font-bold text-xs ${methodColor[bout.method] ?? "text-white"}`}>
+                            {bout.method}
+                          </span>
+                          <span className="text-gray-600 text-[10px] font-heading">{bout.round}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-600 font-heading text-[10px]">def.</span>
+                        <span className="font-heading text-sm text-gray-500 uppercase">
+                          {bout.loser}
+                        </span>
+                        <span className="text-gray-700 text-[10px] font-heading">{bout.loserRec}</span>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -73,6 +106,8 @@ export default function Results() {
           ))}
         </div>
       </div>
+
+      <div className="section-divider mt-20 sm:mt-28" />
     </section>
   );
 }

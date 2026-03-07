@@ -23,39 +23,45 @@ const news = [
 
 export default function News() {
   return (
-    <section id="news" className="py-20 bg-[#0a0a0a]">
+    <section id="news" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-5xl sm:text-6xl uppercase text-white mb-12">
+        <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14">
           Latest Media
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-gray-800/50">
           {news.map((article) => (
             <Link
               key={article.title}
               href="#"
               className="bg-[#0a0a0a] group block"
             >
-              <div className="relative overflow-hidden" style={{ height: 250 }}>
+              <div className="relative overflow-hidden" style={{ minHeight: 280 }}>
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 absolute inset-0"
+                  style={{ minHeight: 280 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="text-gray-500 font-heading text-xs tracking-widest uppercase mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                  <div className="text-gray-600 font-heading text-[10px] tracking-[0.25em] uppercase mb-2.5">
                     {article.date}
                   </div>
-                  <h3 className="font-heading font-bold text-base uppercase text-white leading-tight line-clamp-3">
+                  <h3 className="font-heading font-bold text-sm sm:text-base uppercase text-white leading-tight line-clamp-3">
                     {article.title}
                   </h3>
+                  <div className="mt-3 text-[#c41e3a] font-heading text-[10px] tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Read More →
+                  </div>
                 </div>
               </div>
             </Link>
           ))}
         </div>
       </div>
+
+      <div className="section-divider mt-20 sm:mt-28" />
     </section>
   );
 }
