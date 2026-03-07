@@ -1,19 +1,23 @@
-name: 🚀 Deploy to Production
+name: 🚀 Deploy to Production (GitHub Pages)
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      confirm:
-        description: "Type DEPLOY to confirm production deploy"
-        required: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy to emxsports.com
-    if: github.event_name == 'push' || github.event.inputs.confirm == 'DEPLOY'
+    name: Build & Deploy to GitHub Pages
 
     steps:
       - name: Checkout
@@ -33,24 +37,12 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_ENV: production
 
-      - name: Deploy to server via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: 38.180.217.53
-          username: emxsports_co_usr67
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/emxsports_co_usr67/data/www/emxsports.com
-            # backup current
-            cp -r . ../emxsports_backup_$(date +%Y%m%d_%H%M%S) 2>/dev/null || true
-            echo "Deployed at $(date)"
+      - name: Add CNAME for custom domain
+        run: echo "emxsports.com" > out/CNAME
 
-      - name: Upload built files
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          host: 38.180.217.53
-          username: emxsports_co_usr67
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "out/*"
-          target: "/var/www/emxsports_co_usr67/data/www/emxsports.com"
-          strip_components: 1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          cname: emxsports.com
