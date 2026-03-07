@@ -1,4 +1,4 @@
-name: 🚀 Deploy to Production (GitHub Pages)
+name: 🚀 Deploy to GitHub Pages
 
 on:
   push:
@@ -36,13 +36,10 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_ENV: production
-
-      - name: Add CNAME for custom domain
-        run: echo "emxsports.com" > out/CNAME
+          GITHUB_PAGES_PREVIEW: "true"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          cname: emxsports.com

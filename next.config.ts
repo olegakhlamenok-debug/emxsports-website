@@ -9,10 +9,12 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
 
   // GitHub Pages uses repo name as base path for non-root deploys
-  // Production runs on root domain — no basePath needed
-  basePath: isStaging
-    ? `/${process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "emxsports"}`
-    : "",
+  // Production on custom domain — no basePath needed
+  basePath: isProd && !process.env.GITHUB_PAGES_PREVIEW
+    ? ""
+    : isStaging || process.env.GITHUB_PAGES_PREVIEW
+      ? `/${process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "emxsports-website"}`
+      : "",
 
   images: {
     // Static export requires unoptimized images
