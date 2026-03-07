@@ -5,7 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden py-24 sm:py-32 md:py-36">
+    <section className="relative flex items-center justify-center overflow-hidden py-16 sm:py-20 md:py-24">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
@@ -15,14 +15,14 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-black/75" />
       {/* Bottom gradient fade into next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Logo */}
         <img
           src={`${basePath}/images/logo.png`}
           alt="EMX Sports"
-          className="h-40 sm:h-56 md:h-72 lg:h-80 mx-auto mb-6 drop-shadow-2xl"
+          className="h-28 sm:h-36 md:h-44 lg:h-52 mx-auto mb-5 drop-shadow-2xl"
         />
 
         <p className="text-gray-400 text-sm sm:text-base tracking-[0.3em] uppercase font-heading mb-10">
