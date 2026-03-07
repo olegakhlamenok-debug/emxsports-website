@@ -5,7 +5,7 @@ import { fighters } from "@/data/fighters";
 export default function Fighters() {
   return (
     <section id="fighters" className="py-20 sm:py-28 bg-[#0a0a0a]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center">
           <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white">
             Our Fighters

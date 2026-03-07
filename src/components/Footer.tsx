@@ -24,7 +24,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="bg-[#060606] border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12">
           {/* Nav links — red */}
           <div>
@@ -96,7 +96,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="border-t border-white/5 py-5 sm:py-6">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-700 text-[10px] sm:text-xs tracking-wider">
             © 2026 EMX Sports. All rights reserved.
           </p>
