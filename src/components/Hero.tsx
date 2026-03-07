@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -8,32 +10,31 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1547153760-18fc86324498?w=1920&q=80')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1920&q=80')`,
         }}
       />
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/75" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Main headline — Matchroom style */}
-        <h1 className="font-heading font-bold text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] uppercase leading-[0.9] tracking-tight mb-6">
-          <span className="block text-white">EMX</span>
-          <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.3em]">
-            SPORTS
-          </span>
-        </h1>
+        {/* Logo */}
+        <img
+          src={`${basePath}/images/logo.png`}
+          alt="EMX Sports"
+          className="h-28 sm:h-36 mx-auto mb-6"
+        />
 
-        <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-12 font-light tracking-wide">
-          Professional Boxing Promotion
+        <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-16 font-light tracking-wide">
+          Where Champions Are Made
         </p>
 
-        {/* Event cards grid — Matchroom style */}
-        <div className="mt-8 max-w-4xl mx-auto">
+        {/* Main event card */}
+        <div className="max-w-4xl mx-auto">
           <Link href="#events" className="block group">
             <div className="relative overflow-hidden border border-gray-800 hover:border-gray-600 transition-all">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1549476464-37392f717541?w=800&q=80')`,
+                  backgroundImage: `url('${basePath}/images/fighters/jevgenijs-aleksejevs-event.jpg')`,
                 }}
               />
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-all" />

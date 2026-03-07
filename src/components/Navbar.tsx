@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const navLinks = [
   { href: "#events", label: "Events" },
   { href: "#fighters", label: "Fighters" },
@@ -31,13 +33,12 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 bg-[#c41e3a] flex items-center justify-center">
-              <span className="text-white font-heading font-bold text-xs">EMX</span>
-            </div>
-            <span className="font-heading font-bold text-lg tracking-wider text-white">
-              EMX SPORTS
-            </span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <img
+              src={`${basePath}/images/logo.png`}
+              alt="EMX Sports"
+              className="h-10"
+            />
           </Link>
 
           {/* Desktop Nav */}

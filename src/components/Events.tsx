@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const events = [
   {
     id: 1,
@@ -8,7 +10,7 @@ const events = [
     fighter1: "Aleksejevs",
     fighter2: "Falcinelli",
     venue: "Xiaomi Arena, Riga, Latvia",
-    image: "https://images.unsplash.com/photo-1549476464-37392f717541?w=600&q=80",
+    image: `${basePath}/images/fighters/jevgenijs-aleksejevs-event.jpg`,
     featured: true,
   },
   {
@@ -17,16 +19,16 @@ const events = [
     fighter1: "Volkovs",
     fighter2: "Christian Luis",
     venue: "Xiaomi Arena, Riga, Latvia",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
+    image: `${basePath}/images/fighters/milans-volkovs.jpg`,
     featured: false,
   },
   {
     id: 3,
     date: "12 APR",
-    fighter1: "Melnikovs",
-    fighter2: "Di Luca",
+    fighter1: "Chukhadzhian",
+    fighter2: "TBA",
     venue: "Arena Riga, Riga, Latvia",
-    image: "https://images.unsplash.com/photo-1576669801820-a9ab287ac2d1?w=600&q=80",
+    image: `${basePath}/images/fighters/karen-chukhadzhian.jpg`,
     featured: false,
   },
 ];
@@ -96,10 +98,7 @@ export default function Events() {
   return (
     <section id="events" className="py-20 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Featured event — large card */}
         <EventCard event={featured} large />
-
-        {/* Other events — 2-column grid */}
         <div className="grid sm:grid-cols-2 gap-px mt-px bg-gray-800">
           {rest.map((event) => (
             <div key={event.id} className="bg-[#0a0a0a]">

@@ -1,35 +1,6 @@
 "use client";
 import Link from "next/link";
-
-const fighters = [
-  {
-    name: "Jevgenijs Aleksejevs",
-    nickname: "The Latvian Lion",
-    record: "20-0-0",
-    kos: "14",
-    weight: "Middleweight",
-    ranking: "WBC #4",
-    image: "https://images.unsplash.com/photo-1549476464-37392f717541?w=500&q=80",
-  },
-  {
-    name: "Milans Volkovs",
-    nickname: "The Storm",
-    record: "12-4-2",
-    kos: "7",
-    weight: "Light Heavyweight",
-    ranking: "",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80",
-  },
-  {
-    name: "Arturs Melnikovs",
-    nickname: "The Machine",
-    record: "8-0-0",
-    kos: "6",
-    weight: "Welterweight",
-    ranking: "WBO European #8",
-    image: "https://images.unsplash.com/photo-1576669801820-a9ab287ac2d1?w=500&q=80",
-  },
-];
+import { fighters } from "@/data/fighters";
 
 export default function Fighters() {
   return (
@@ -39,22 +10,23 @@ export default function Fighters() {
           <h2 className="font-heading font-bold text-5xl sm:text-6xl uppercase text-white">
             Fighters
           </h2>
-          <Link
-            href="#"
-            className="hidden sm:block text-gray-500 hover:text-white font-heading text-xs tracking-widest uppercase transition-colors"
-          >
-            View All →
-          </Link>
+          <span className="hidden sm:block text-gray-500 font-heading text-xs tracking-widest uppercase">
+            Our Roster
+          </span>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-800">
           {fighters.map((fighter) => (
-            <div key={fighter.name} className="bg-[#0a0a0a] group cursor-pointer">
+            <Link
+              key={fighter.slug}
+              href={`/fighters/${fighter.slug}/`}
+              className="bg-[#0a0a0a] group block"
+            >
               <div className="relative overflow-hidden" style={{ height: 400 }}>
                 <img
                   src={fighter.image}
                   alt={fighter.name}
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover object-top opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
@@ -66,7 +38,7 @@ export default function Fighters() {
 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="text-gray-500 font-heading text-xs tracking-widest uppercase mb-1">
-                    {fighter.weight}
+                    {fighter.weightClass}
                   </div>
                   <h3 className="font-heading font-bold text-2xl uppercase text-white leading-tight">
                     {fighter.name}
@@ -76,7 +48,7 @@ export default function Fighters() {
                   </div>
                   <div className="flex items-center gap-4 mt-3">
                     <span className="text-white font-heading font-bold text-lg">
-                      {fighter.record}
+                      {fighter.record.wins}-{fighter.record.losses}-{fighter.record.draws}
                     </span>
                     <span className="text-gray-500 text-xs font-heading tracking-wider">
                       {fighter.kos} KOs
@@ -84,7 +56,7 @@ export default function Fighters() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

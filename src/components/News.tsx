@@ -1,21 +1,23 @@
 "use client";
 import Link from "next/link";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const news = [
   {
     title: "Aleksejevs vs Falcinelli: The WBC International Title Fight is Official",
     date: "Jan 15, 2026",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
+    image: `${basePath}/images/gallery/1.jpg`,
   },
   {
     title: "Inside Camp: Aleksejevs Prepares for His Biggest Challenge Yet",
     date: "Jan 10, 2026",
-    image: "https://images.unsplash.com/photo-1549476464-37392f717541?w=600&q=80",
+    image: `${basePath}/images/gallery/2.jpg`,
   },
   {
-    title: "Melnikovs Blasts Out Ivanov in Three to Stay Perfect",
-    date: "Jun 28, 2025",
-    image: "https://images.unsplash.com/photo-1576669801820-a9ab287ac2d1?w=600&q=80",
+    title: "Chukhadzhian Signs with EMX Sports for Multi-Fight Deal",
+    date: "Dec 20, 2025",
+    image: `${basePath}/images/gallery/3.jpg`,
   },
 ];
 
