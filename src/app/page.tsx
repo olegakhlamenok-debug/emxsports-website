@@ -5,6 +5,7 @@ import Fighters from "@/components/Fighters";
 import Results from "@/components/Results";
 import About from "@/components/About";
 import News from "@/components/News";
+import Shop from "@/components/Shop";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Results />
       <About />
       <News />
+      <Shop />
       <Footer />
     </main>
   );
