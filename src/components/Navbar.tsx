@@ -6,12 +6,13 @@ import { Menu, X } from "lucide-react";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const navLinks = [
-  { href: "#events", label: "Events" },
+  { href: "#articles", label: "News" },
   { href: "#fighters", label: "Fighters" },
   { href: "#results", label: "Results" },
-  { href: "#about", label: "About" },
-  { href: "#news", label: "News" },
+  { href: "#news", label: "Media" },
+  { href: "#best-moments", label: "Best Moments" },
   { href: "#shop", label: "Shop" },
+  { href: "#about", label: "About" },
 ];
 
 export default function Navbar() {

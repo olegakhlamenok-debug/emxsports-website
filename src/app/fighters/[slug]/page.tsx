@@ -38,7 +38,7 @@ export default async function FighterPage({
       <section className="relative overflow-hidden">
         {/* Background image */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-top opacity-20"
           style={{ backgroundImage: `url('${fighter.imageAction}')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
@@ -164,19 +164,18 @@ export default async function FighterPage({
       {/* Related Media */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="font-heading font-bold text-4xl uppercase text-white mb-8 opacity-20">
-          Related Media
+          Fight Gallery
         </h2>
-        <div className="grid grid-cols-3 gap-px bg-gray-800">
-          {[1, 2, 3].map((i) => (
+        <div className="grid grid-cols-3 gap-[2px]">
+          {fighter.gallery.map((src, i) => (
             <div
               key={i}
-              className="bg-[#0a0a0a] relative overflow-hidden group"
-              style={{ height: 200 }}
+              className="bg-[#0a0a0a] relative overflow-hidden group aspect-[4/3]"
             >
               <img
-                src={fighter.imageAction}
-                alt={`${fighter.name} media ${i}`}
-                className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity"
+                src={src}
+                alt={`${fighter.name} — fight photo ${i + 1}`}
+                className="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105 transition-transform"
               />
             </div>
           ))}

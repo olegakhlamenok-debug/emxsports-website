@@ -5,19 +5,22 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const news = [
   {
-    title: "Aleksejevs vs Falcinelli: The WBC International Title Fight is Official",
-    date: "Jan 15, 2026",
-    image: `${basePath}/images/gallery/1.jpg`,
+    title: "20-0. Undefeated. Still Champion. Aleksejevs Defends IBF European Title",
+    date: "Mar 6, 2026",
+    image: `${basePath}/images/instagram/post1.jpg`,
+    url: "https://www.instagram.com/emx.sports/p/DVjtPNlgDGY/",
   },
   {
-    title: "Inside Camp: Aleksejevs Prepares for His Biggest Challenge Yet",
-    date: "Jan 10, 2026",
-    image: `${basePath}/images/gallery/2.jpg`,
+    title: "The Big Bad Wolf Strikes Again. Volkovs Claims IBF International Title",
+    date: "Mar 6, 2026",
+    image: `${basePath}/images/instagram/post2.jpg`,
+    url: "https://www.instagram.com/emx.sports/p/DVjqi-jgKfH/",
   },
   {
-    title: "Chukhadzhian Signs with EMX Sports for Multi-Fight Deal",
-    date: "Dec 20, 2025",
-    image: `${basePath}/images/gallery/3.jpg`,
+    title: "And Still Undefeated! Hurricane Defended His IBF European Middleweight Title",
+    date: "Mar 4, 2026",
+    image: `${basePath}/images/instagram/post3.jpg`,
+    url: "https://www.instagram.com/emx.sports/p/DVd9IlnDJvl/",
   },
 ];
 
@@ -33,7 +36,9 @@ export default function News() {
           {news.map((article) => (
             <Link
               key={article.title}
-              href="#"
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#0a0a0a] group block transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1"
             >
               <div className="relative overflow-hidden" style={{ minHeight: 280 }}>
@@ -46,13 +51,13 @@ export default function News() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                   <div className="text-gray-600 font-heading text-[10px] tracking-[0.25em] uppercase mb-2.5">
-                    {article.date}
+                    {article.date} · @emx.sports
                   </div>
                   <h3 className="font-heading font-bold text-sm sm:text-base uppercase text-white leading-tight line-clamp-3">
                     {article.title}
                   </h3>
                   <div className="mt-3 text-[#c41e3a] font-heading text-[10px] tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Read More →
+                    View on Instagram →
                   </div>
                 </div>
               </div>

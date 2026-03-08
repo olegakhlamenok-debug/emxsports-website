@@ -2,18 +2,42 @@
 
 const results = [
   {
-    date: "Oct 12, 2025",
-    event: "EMX Fight Night #8",
+    date: "Feb 21, 2026",
+    event: "KOK '128 × Dream Boxing — Xiaomi Arena, Riga",
     bouts: [
-      { winner: "Aleksejevs", winnerRec: "20-0-0", loser: "Petrov", loserRec: "15-4-0", method: "TKO", round: "R6" },
-      { winner: "Volkovs", winnerRec: "12-4-2", loser: "Grigoriev", loserRec: "10-3-0", method: "UD", round: "R10" },
+      {
+        winner: "Aleksejevs",
+        winnerRec: "20-0-0",
+        loser: "Falcinelli",
+        loserRec: "17-2-2",
+        method: "SD",
+        round: "R10",
+        title: "IBF European Middleweight Title",
+      },
+      {
+        winner: "Volkovs",
+        winnerRec: "12-4-2",
+        loser: "Christian F. Luis",
+        loserRec: "13-4-0",
+        method: "UD",
+        round: "R10",
+        title: "IBF International Cruiserweight Title",
+      },
     ],
   },
   {
-    date: "Jun 28, 2025",
-    event: "EMX Fight Night #7",
+    date: "Oct 11, 2025",
+    event: "KOK '127 — Arena Riga, Riga",
     bouts: [
-      { winner: "Melnikovs", winnerRec: "8-0-0", loser: "Ivanov", loserRec: "6-2-0", method: "KO", round: "R3" },
+      {
+        winner: "Chukhadzhian",
+        winnerRec: "26-3-0",
+        loser: "Mafauad",
+        loserRec: "13-1-0",
+        method: "TKO",
+        round: "R2",
+        title: "IBF International Welterweight Title",
+      },
     ],
   },
 ];
@@ -55,24 +79,33 @@ export default function Results() {
                     className="bg-[#111] hover:bg-[#161616] transition-all duration-300 hover:shadow-[0_0_20px_rgba(196,30,58,0.1)] hover:translate-x-1"
                   >
                     {/* Desktop layout */}
-                    <div className="hidden sm:flex px-6 py-5 items-center justify-between">
-                      <div className="flex items-center gap-3 flex-wrap">
-                        <span className="font-heading font-bold text-lg sm:text-xl text-white uppercase">
-                          {bout.winner}
-                        </span>
-                        <span className="text-gray-600 text-xs font-heading">{bout.winnerRec}</span>
-                        <span className="text-gray-600 font-heading text-xs mx-1">def.</span>
-                        <span className="font-heading text-base sm:text-lg text-gray-500 uppercase">
-                          {bout.loser}
-                        </span>
-                        <span className="text-gray-700 text-xs font-heading">{bout.loserRec}</span>
+                    <div className="hidden sm:block px-6 py-5">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="font-heading font-bold text-lg sm:text-xl text-white uppercase">
+                            {bout.winner}
+                          </span>
+                          <span className="text-gray-600 text-xs font-heading">{bout.winnerRec}</span>
+                          <span className="text-gray-600 font-heading text-xs mx-1">def.</span>
+                          <span className="font-heading text-base sm:text-lg text-gray-500 uppercase">
+                            {bout.loser}
+                          </span>
+                          <span className="text-gray-700 text-xs font-heading">{bout.loserRec}</span>
+                        </div>
+                        <div className="flex items-center gap-3 flex-shrink-0 ml-4">
+                          <span className={`font-heading font-bold text-sm ${methodColor[bout.method] ?? "text-white"}`}>
+                            {bout.method}
+                          </span>
+                          <span className="text-gray-600 text-xs font-heading">{bout.round}</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-3 flex-shrink-0 ml-4">
-                        <span className={`font-heading font-bold text-sm ${methodColor[bout.method] ?? "text-white"}`}>
-                          {bout.method}
-                        </span>
-                        <span className="text-gray-600 text-xs font-heading">{bout.round}</span>
-                      </div>
+                      {bout.title && (
+                        <div className="mt-2">
+                          <span className="text-[#c41e3a]/70 font-heading text-[10px] tracking-[0.15em] uppercase">
+                            🏆 {bout.title}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Mobile layout — stacked */}
@@ -98,6 +131,13 @@ export default function Results() {
                         </span>
                         <span className="text-gray-700 text-[10px] font-heading">{bout.loserRec}</span>
                       </div>
+                      {bout.title && (
+                        <div className="mt-2">
+                          <span className="text-[#c41e3a]/70 font-heading text-[10px] tracking-[0.15em] uppercase">
+                            🏆 {bout.title}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}

@@ -18,14 +18,24 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Logo */}
-        <img
-          src={`${basePath}/images/logo.png`}
-          alt="EMX Sports"
-          className="h-28 sm:h-36 md:h-44 lg:h-52 mx-auto mb-5 drop-shadow-2xl"
-        />
+        {/* Logo — sized to match the tagline width */}
+        <div className="inline-block mx-auto mb-5">
+          <img
+            src={`${basePath}/images/logo.png`}
+            alt="EMX Sports"
+            className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px] mx-auto drop-shadow-2xl"
+          />
+        </div>
 
-        <p className="text-gray-400 text-sm sm:text-base tracking-[0.3em] uppercase font-heading mb-10">
+        <p
+          className="text-sm sm:text-base tracking-[0.3em] uppercase font-heading mb-10"
+          style={{
+            backgroundImage: "linear-gradient(90deg, #ffffff 0%, #a0a0a0 50%, #cc0000 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
           Where Champions Are Made
         </p>
 

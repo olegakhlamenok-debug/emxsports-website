@@ -46,9 +46,11 @@ export default function Fighters() {
                   <h3 className="font-heading font-bold text-xl sm:text-2xl uppercase text-white leading-tight">
                     {fighter.name}
                   </h3>
-                  <div className="text-gray-500 font-heading text-xs italic mt-1.5">
-                    &ldquo;{fighter.nickname}&rdquo;
-                  </div>
+                  {fighter.nickname && (
+                    <div className="text-gray-500 font-heading text-xs italic mt-1.5">
+                      &ldquo;{fighter.nickname}&rdquo;
+                    </div>
+                  )}
                   <div className="flex items-center gap-4 mt-3 pt-3 border-t border-white/10">
                     <span className="text-white font-heading font-bold text-base sm:text-lg">
                       {fighter.record.wins}-{fighter.record.losses}-{fighter.record.draws}

@@ -1,29 +1,31 @@
 "use client";
 import Link from "next/link";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const products = [
   {
-    name: "EMX Training T-Shirt — Black",
+    name: "EMX Training Shorts — Black",
+    price: "€40.00",
+    image: `${basePath}/images/shop/shorts.png`,
+    tag: "New",
+  },
+  {
+    name: "EMX T-Shirt — Black",
     price: "€45.00",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80",
+    image: `${basePath}/images/shop/tshirt.png`,
     tag: null,
   },
   {
     name: "EMX Hoodie — Black",
     price: "€75.00",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80",
+    image: `${basePath}/images/shop/hoodie.png`,
     tag: null,
-  },
-  {
-    name: "EMX Training Vest — Black",
-    price: "€40.00",
-    image: "https://images.unsplash.com/photo-1503341504253-dff4f9fb0c84?w=500&q=80",
-    tag: "New",
   },
   {
     name: "EMX Cap — Black",
     price: "€25.00",
-    image: "https://images.unsplash.com/photo-1588850561407-ed78c334e67a?w=500&q=80",
+    image: `${basePath}/images/shop/cap.png`,
     tag: null,
   },
 ];

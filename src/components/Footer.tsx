@@ -59,14 +59,6 @@ export default function Footer() {
               <p>Riga, Latvia</p>
               <p className="mt-4">
                 <a
-                  href="mailto:info@emxsports.com"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  info@emxsports.com
-                </a>
-              </p>
-              <p>
-                <a
                   href="mailto:press@emxsports.com"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
