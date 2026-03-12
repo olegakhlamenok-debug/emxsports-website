@@ -61,7 +61,7 @@ export const fighters: Fighter[] = [
     stance: "Orthodox",
     height: "5'9\"",
     age: 30,
-    ranking: "2× IBF World Title Challenger",
+    ranking: "",
     titles: [
       "WBO Youth World Champion (won & defended)",
       "WBC Youth World Champion (won & defended)",
