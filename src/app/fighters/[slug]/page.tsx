@@ -161,6 +161,28 @@ export default async function FighterPage({
         </div>
       </section>
 
+      {/* Championships */}
+      {fighter.titles && fighter.titles.length > 0 && (
+        <>
+          <div className="h-px bg-gray-800" />
+          <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 className="font-heading font-bold text-xs tracking-widest uppercase text-gray-500 mb-8">
+              Championships &amp; Titles
+            </h2>
+            <ul className="flex flex-col gap-3 max-w-2xl">
+              {fighter.titles.map((title, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-[2px] text-[#d4a017] text-sm">🏆</span>
+                  <span className="font-heading text-white text-sm tracking-wide">
+                    {title}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </>
+      )}
+
       {/* Related Media */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="font-heading font-bold text-4xl uppercase text-white mb-8 opacity-20">
