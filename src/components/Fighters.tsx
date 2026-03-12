@@ -47,7 +47,7 @@ export default function Fighters() {
                     {fighter.name}
                   </h3>
                   {fighter.nickname && (
-                    <div className="text-gray-500 font-heading text-xs italic mt-1.5">
+                    <div className="text-gray-300 font-heading text-xs font-semibold tracking-wide mt-1.5">
                       &ldquo;{fighter.nickname}&rdquo;
                     </div>
                   )}
