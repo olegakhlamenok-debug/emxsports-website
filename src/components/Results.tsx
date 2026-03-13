@@ -51,7 +51,7 @@ const methodColor: Record<string, string> = {
 
 export default function Results() {
   return (
-    <section id="results" className="py-20 sm:py-28 bg-[#111]">
+    <section id="results" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14 text-center">
           Latest Results
@@ -76,7 +76,7 @@ export default function Results() {
                 {event.bouts.map((bout, bi) => (
                   <div
                     key={bi}
-                    className="bg-[#111] hover:bg-[#161616] transition-all duration-300 hover:shadow-[0_0_20px_rgba(196,30,58,0.1)] hover:translate-x-1"
+                    className="bg-[#0a0a0a] hover:bg-[#161616] transition-all duration-300 hover:shadow-[0_0_20px_rgba(196,30,58,0.1)] hover:translate-x-1"
                   >
                     {/* Desktop layout */}
                     <div className="hidden sm:block px-6 py-5">

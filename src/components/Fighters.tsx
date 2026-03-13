@@ -4,23 +4,23 @@ import { fighters } from "@/data/fighters";
 
 export default function Fighters() {
   return (
-    <section id="fighters" className="py-20 sm:py-28 bg-black">
+    <section id="fighters" className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white">
+          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-gray-900">
             Our Fighters
           </h2>
-          <span className="hidden sm:block text-gray-600 font-heading text-xs tracking-[0.2em] uppercase mt-4">
+          <span className="hidden sm:block text-gray-400 font-heading text-xs tracking-[0.2em] uppercase mt-4">
             View Full Roster →
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-gray-800/50">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-gray-200">
           {fighters.map((fighter) => (
             <Link
               key={fighter.slug}
               href={`/fighters/${fighter.slug}/`}
-              className="bg-black group block transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1"
+              className="bg-[#0a0a0a] group block transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1"
             >
               <div className="relative overflow-hidden" style={{ minHeight: 420 }}>
                 <img
@@ -33,7 +33,7 @@ export default function Fighters() {
 
                 {fighter.ranking && (
                   <div className="absolute top-5 left-5">
-                    <span className="text-[#c41e3a] font-heading text-[10px] tracking-[0.2em] uppercase bg-black/40 backdrop-blur-sm px-2.5 py-1">
+                    <span className="text-[#c41e3a] font-heading text-[10px] tracking-[0.2em] uppercase bg-black/60 backdrop-blur-sm px-2.5 py-1">
                       {fighter.ranking}
                     </span>
                   </div>

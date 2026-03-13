@@ -32,15 +32,15 @@ const products = [
 
 export default function Shop() {
   return (
-    <section id="shop" className="py-20 sm:py-28 bg-[#111]">
+    <section id="shop" className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 sm:mb-14 text-center">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white">
+        <div className="mb-10 sm:mb-14 flex items-end justify-between">
+          <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-gray-900">
             Shop
           </h2>
           <Link
             href="#"
-            className="hidden sm:inline-block text-gray-600 hover:text-white font-heading text-xs tracking-[0.2em] uppercase transition-colors mt-4"
+            className="hidden sm:inline-block text-gray-400 hover:text-gray-900 font-heading text-xs tracking-[0.2em] uppercase transition-colors pb-2"
           >
             View All →
           </Link>
@@ -51,14 +51,14 @@ export default function Shop() {
             <Link
               key={product.name}
               href="#"
-              className="group block bg-[#111] hover:bg-[#161616] transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-2"
+              className="group block bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-300 hover:shadow-md transition-all duration-300"
             >
               {/* Product image */}
-              <div className="relative overflow-hidden aspect-square">
+              <div className="relative overflow-hidden aspect-square bg-gray-100">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                 />
                 {product.tag && (
                   <div className="absolute top-3 left-3">
@@ -71,7 +71,7 @@ export default function Shop() {
 
               {/* Product info */}
               <div className="p-4 sm:p-5">
-                <h3 className="font-heading font-bold text-xs sm:text-sm uppercase text-white leading-tight mb-2 min-h-[2.5em]">
+                <h3 className="font-heading font-bold text-xs sm:text-sm uppercase text-gray-900 leading-tight mb-2 min-h-[2.5em]">
                   {product.name}
                 </h3>
                 <div className="text-gray-500 font-heading text-xs sm:text-sm mb-3 sm:mb-4">

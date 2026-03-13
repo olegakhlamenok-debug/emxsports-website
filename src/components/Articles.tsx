@@ -4,7 +4,7 @@ import { articles } from "@/data/articles";
 
 export default function Articles() {
   return (
-    <section id="articles" className="py-20 sm:py-28 bg-black">
+    <section id="articles" className="py-20 sm:py-28 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14 text-center">
           News

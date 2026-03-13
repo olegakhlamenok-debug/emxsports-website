@@ -17,7 +17,7 @@ export default function BestMoments() {
 
   return (
     <>
-      <section id="best-moments" className="py-20 sm:py-28 bg-black">
+      <section id="best-moments" className="py-20 sm:py-28 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14 text-center">
             Best Moments
@@ -47,7 +47,7 @@ export default function BestMoments() {
       {/* Lightbox */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-[#0a0a0a]/90 flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
         >
           <button
