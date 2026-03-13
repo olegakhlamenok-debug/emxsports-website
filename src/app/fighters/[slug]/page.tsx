@@ -130,14 +130,24 @@ export default async function FighterPage({
                   </span>
                   <span className="text-white font-heading">{fighter.height}</span>
                 </div>
-                {fighter.ranking && (
+                {(fighter.rankings?.length || fighter.ranking) && (
                   <div className="col-span-2">
                     <span className="text-gray-500 font-heading text-[10px] tracking-widest uppercase block mb-1">
                       Status
                     </span>
-                    <span className="text-[#c41e3a] font-heading font-bold text-lg">
-                      {fighter.ranking}
-                    </span>
+                    {fighter.rankings && fighter.rankings.length > 0 ? (
+                      <div className="flex flex-col gap-1">
+                        {fighter.rankings.map((r, i) => (
+                          <span key={i} className="text-[#c41e3a] font-heading font-bold text-base">
+                            {r}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <span className="text-[#c41e3a] font-heading font-bold text-lg">
+                        {fighter.ranking}
+                      </span>
+                    )}
                   </div>
                 )}
               </div>

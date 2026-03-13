@@ -11,6 +11,7 @@ export interface Fighter {
   height: string;
   age: number;
   ranking: string;
+  rankings?: string[];
   titles?: string[];
   bio: string;
   instagram: string;
@@ -62,7 +63,12 @@ export const fighters: Fighter[] = [
     stance: "Orthodox",
     height: "5'9\"",
     age: 30,
-    ranking: "IBF #1 Contender | Welterweight | Mandatory Final Eliminator pending.",
+    ranking: "IBF #1 Contender",
+    rankings: [
+      "IBF #1 Contender",
+      "IBF #1 Ranked Welterweight | Mandatory Final Eliminator pending",
+      "IBF #1 Contender | Welterweight | Mandatory Final Eliminator pending",
+    ],
     titles: [
       "WBO Youth World Welterweight Champion",
       "WBC Youth World Welterweight Champion",
