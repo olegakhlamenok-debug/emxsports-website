@@ -1,6 +1,6 @@
-:HL["/emxsports-website/_next/static/chunks/ee3a6921bfbb51ef.css","style"]
+:HL["/emxsports-website/_next/static/chunks/69bf42844d2edbbc.css","style"]
 :HL["/emxsports-website/images/fighters/jevgenijs-aleksejevs.jpg","image"]
 :HL["/emxsports-website/images/fighters/jevgenijs-aleksejevs-event.jpg","image"]
 :HL["/emxsports-website/images/aleksejevs-gallery-new.jpg","image"]
 :HL["/emxsports-website/images/gallery/4.jpg","image"]
-0:{"buildId":"WQ_cMB-NSRI55GZPzGbTQ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"fighters","paramType":null,"paramKey":"fighters","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"jevgenijs-aleksejevs","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"FLqlgtrYn8NbR8EXVxRY7","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"fighters","paramType":null,"paramKey":"fighters","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"jevgenijs-aleksejevs","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
