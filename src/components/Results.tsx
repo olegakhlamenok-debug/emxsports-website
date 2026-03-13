@@ -51,7 +51,7 @@ const methodColor: Record<string, string> = {
 
 export default function Results() {
   return (
-    <section id="results" className="py-20 sm:py-28 bg-[#0a0a0a]">
+    <section id="results" className="py-20 sm:py-28 bg-[#111]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white mb-10 sm:mb-14 text-center">
           Latest Results
@@ -62,11 +62,11 @@ export default function Results() {
             <div key={ei}>
               {/* Event header */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-                <span className="text-gray-500 font-heading text-sm tracking-wider">
+                <span className="text-gray-300 font-heading text-sm tracking-wider">
                   {event.date}
                 </span>
                 <div className="hidden sm:block h-px flex-1 bg-gray-800/50" />
-                <span className="text-gray-600 font-heading text-xs tracking-[0.2em] uppercase">
+                <span className="text-gray-400 font-heading text-xs tracking-[0.2em] uppercase">
                   {event.event}
                 </span>
               </div>
@@ -85,9 +85,9 @@ export default function Results() {
                           <span className="font-heading font-bold text-lg sm:text-xl text-white uppercase">
                             {bout.winner}
                           </span>
-                          <span className="text-gray-600 text-xs font-heading">{bout.winnerRec}</span>
-                          <span className="text-gray-600 font-heading text-xs mx-1">def.</span>
-                          <span className="font-heading text-base sm:text-lg text-gray-500 uppercase">
+                          <span className="text-gray-400 text-xs font-heading">{bout.winnerRec}</span>
+                          <span className="text-gray-400 font-heading text-xs mx-1">def.</span>
+                          <span className="font-heading text-base sm:text-lg text-gray-300 uppercase">
                             {bout.loser}
                           </span>
                           <span className="text-gray-700 text-xs font-heading">{bout.loserRec}</span>
@@ -96,7 +96,7 @@ export default function Results() {
                           <span className={`font-heading font-bold text-sm ${methodColor[bout.method] ?? "text-white"}`}>
                             {bout.method}
                           </span>
-                          <span className="text-gray-600 text-xs font-heading">{bout.round}</span>
+                          <span className="text-gray-400 text-xs font-heading">{bout.round}</span>
                         </div>
                       </div>
                       {bout.title && (
@@ -115,18 +115,18 @@ export default function Results() {
                           <span className="font-heading font-bold text-base text-white uppercase">
                             {bout.winner}
                           </span>
-                          <span className="text-gray-600 text-xs font-heading ml-2">{bout.winnerRec}</span>
+                          <span className="text-gray-400 text-xs font-heading ml-2">{bout.winnerRec}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className={`font-heading font-bold text-xs ${methodColor[bout.method] ?? "text-white"}`}>
                             {bout.method}
                           </span>
-                          <span className="text-gray-600 text-[10px] font-heading">{bout.round}</span>
+                          <span className="text-gray-400 text-[10px] font-heading">{bout.round}</span>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-gray-600 font-heading text-[10px]">def.</span>
-                        <span className="font-heading text-sm text-gray-500 uppercase">
+                        <span className="text-gray-400 font-heading text-[10px]">def.</span>
+                        <span className="font-heading text-sm text-gray-300 uppercase">
                           {bout.loser}
                         </span>
                         <span className="text-gray-700 text-[10px] font-heading">{bout.loserRec}</span>

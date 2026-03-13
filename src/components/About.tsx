@@ -9,7 +9,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-[#0a0a0a]">
+    <section id="about" className="py-20 sm:py-28 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-start">
           {/* Text — 3 cols */}
@@ -42,11 +42,11 @@ export default function About() {
           <div className="lg:col-span-2">
             <div className="grid grid-cols-2 gap-[1px] bg-gray-800/50">
               {stats.map(({ value, label }) => (
-                <div key={label} className="bg-[#0a0a0a] p-6 sm:p-8 text-center group hover:bg-[#111] transition-all duration-300">
+                <div key={label} className="bg-[#111] p-6 sm:p-8 text-center group hover:bg-[#1a1a1a] transition-all duration-300">
                   <div className="font-heading font-bold text-4xl sm:text-5xl text-white group-hover:text-[#c41e3a] group-hover:scale-110 transition-all duration-300 mb-1">
                     {value}
                   </div>
-                  <div className="text-gray-600 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-heading">
+                  <div className="text-gray-400 text-[10px] sm:text-xs tracking-[0.2em] uppercase font-heading">
                     {label}
                   </div>
                 </div>

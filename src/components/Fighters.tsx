@@ -4,7 +4,7 @@ import { fighters } from "@/data/fighters";
 
 export default function Fighters() {
   return (
-    <section id="fighters" className="py-20 sm:py-28 bg-[#0a0a0a]">
+    <section id="fighters" className="py-20 sm:py-28 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center">
           <h2 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl uppercase text-white">
@@ -20,7 +20,7 @@ export default function Fighters() {
             <Link
               key={fighter.slug}
               href={`/fighters/${fighter.slug}/`}
-              className="bg-[#0a0a0a] group block transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1"
+              className="bg-black group block transition-all duration-500 hover:shadow-[0_0_30px_rgba(196,30,58,0.15)] hover:-translate-y-1"
             >
               <div className="relative overflow-hidden" style={{ minHeight: 420 }}>
                 <img
@@ -40,14 +40,14 @@ export default function Fighters() {
                 )}
 
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                  <div className="text-gray-500 font-heading text-[10px] tracking-[0.25em] uppercase mb-1.5">
+                  <div className="text-gray-400 font-heading text-[10px] tracking-[0.25em] uppercase mb-1.5">
                     {fighter.weightClass}
                   </div>
                   <h3 className="font-heading font-bold text-xl sm:text-2xl uppercase text-white leading-tight">
                     {fighter.name}
                   </h3>
                   {fighter.nickname && (
-                    <div className="text-gray-500 font-heading text-xs italic mt-1.5">
+                    <div className="text-gray-300 font-heading text-xs italic mt-1.5">
                       &ldquo;{fighter.nickname}&rdquo;
                     </div>
                   )}
@@ -55,7 +55,7 @@ export default function Fighters() {
                     <span className="text-white font-heading font-bold text-base sm:text-lg">
                       {fighter.record.wins}-{fighter.record.losses}-{fighter.record.draws}
                     </span>
-                    <span className="text-gray-600 text-xs font-heading tracking-wider">
+                    <span className="text-gray-400 text-xs font-heading tracking-wider">
                       {fighter.kos} KOs
                     </span>
                   </div>
