@@ -11,7 +11,6 @@ export interface Fighter {
   height: string;
   age: number;
   ranking: string;
-  titles?: string[];
   bio: string;
   instagram: string;
   image: string;
@@ -35,10 +34,6 @@ export const fighters: Fighter[] = [
     height: "5'11\"",
     age: 28,
     ranking: "WBC #4",
-    titles: [
-      "IBO European Middleweight Champion",
-      "IBF European Middleweight Champion (won & defended)",
-    ],
     bio: "Latvian standout with explosive combinations and constant forward pressure. Jevgenijs has dominated the middleweight division in Eastern Europe with a perfect 20-0 record, earning him a WBC #4 world ranking. Known for his relentless pressure fighting style and devastating body work, he has stopped 14 of his 20 opponents. His upcoming bout against Damiano Falcinelli for the WBC International Title represents his biggest test to date.",
     instagram: "https://www.instagram.com/ealekseev/",
     image: `${bp}/images/fighters/jevgenijs-aleksejevs.jpg`,
@@ -62,15 +57,7 @@ export const fighters: Fighter[] = [
     height: "5'9\"",
     age: 30,
     ranking: "",
-    titles: [
-      "WBO Youth World Champion (won & defended)",
-      "WBC Youth World Champion (won & defended)",
-      "WBA International Champion",
-      "IBF Inter-Continental Champion (won & defended)",
-      "WBO International Champion",
-      "IBF International Champion",
-    ],
-    bio: "Elusive technician with sharp counters and high ring IQ. Karen is one of the most decorated welterweights in the region — a multi-belt champion and two-time challenger for the IBF World Title. His collection of titles across WBO, WBC, WBA, and IBF organizations speaks to the breadth of his excellence. With slick defensive skills and precise counterpunching, Chukhadzhian is a true technician who has tested himself at the highest levels of the sport.",
+    bio: "Elusive technician with sharp counters and high ring IQ. Karen brings world-class experience to the EMX roster, having faced elite opposition throughout his career. His slick defensive skills and precise counterpunching make him one of the most technically gifted welterweights in the region. With 26 wins to his name, Chukhadzhian is looking to make a statement on the international stage.",
     instagram: "https://www.instagram.com/karen_chukhadzhian/",
     image: `${bp}/images/fighters/karen-chukhadzhian.jpg`,
     imageAction: `${bp}/images/fighters/karen-chukhadzhian.jpg`,
@@ -93,10 +80,7 @@ export const fighters: Fighter[] = [
     height: "6'1\"",
     age: 26,
     ranking: "",
-    titles: [
-      "IBF International Champion",
-    ],
-    bio: "Riga-based contender with crisp boxing fundamentals and power in both hands. Milans brings an exciting, fan-friendly style to every fight and has already staked his claim on the world stage as IBF International Champion. A natural light heavyweight with speed and athleticism beyond his weight class, Volkovs has quickly become a crowd favorite at EMX events. His combination of technical skill and raw power makes him a dangerous opponent for anyone in the division.",
+    bio: "Riga-based prospect with crisp boxing fundamentals and power in both hands. Milans brings an exciting, fan-friendly style to every fight. A natural light heavyweight with speed and athleticism beyond his weight class, Volkovs has quickly become a crowd favorite at EMX events. His combination of technical skill and raw power makes him a dangerous opponent for anyone in the division.",
     instagram: "https://www.instagram.com/milansvolkovs/",
     image: `${bp}/images/fighters/milans-volkovs.jpg`,
     imageAction: `${bp}/images/fighters/milans-volkovs.jpg`,
