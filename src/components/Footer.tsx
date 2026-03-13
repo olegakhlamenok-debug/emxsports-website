@@ -1,42 +1,33 @@
 "use client";
 import Link from "next/link";
-import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-const navLinks = [
-  { href: "#", label: "Home" },
-  { href: "#events", label: "Events" },
-  { href: "#fighters", label: "Fighters" },
-  { href: "#results", label: "Results" },
-  { href: "#about", label: "About" },
-  { href: "#news", label: "News" },
-  { href: "#shop", label: "Shop" },
-];
-
-const socials = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Twitter, href: "#", label: "Twitter/X" },
+const navColumns = [
+  [
+    { href: "#", label: "Home" },
+    { href: "#articles", label: "News" },
+    { href: "/events/", label: "Events" },
+  ],
+  [
+    { href: "#fighters", label: "Fighters" },
+    { href: "#results", label: "Results" },
+    { href: "#videos", label: "Videos" },
+  ],
+  [
+    { href: "#news", label: "Media" },
+    { href: "#shop", label: "Shop" },
+    { href: "#about", label: "About" },
+  ],
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-[#060606] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12">
-          {/* Nav links — red */}
-          <div>
-            <div className="mb-6 sm:mb-8">
-              <img
-                src={`${basePath}/images/logo.png`}
-                alt="EMX Sports"
-                className="h-16"
-              />
-            </div>
-            <ul className="space-y-2.5">
-              {navLinks.map((link) => (
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-8 sm:gap-12">
+          {navColumns.map((col, i) => (
+            <ul key={i} className="space-y-2.5">
+              {col.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -47,10 +38,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          ))}
 
-          {/* Office info */}
-          <div>
+          {/* Office */}
+          <div className="col-span-3 sm:col-span-1 border-t border-white/5 sm:border-t-0 pt-6 sm:pt-0">
             <h4 className="font-heading font-bold text-[10px] text-gray-600 uppercase tracking-[0.25em] mb-5 sm:mb-6">
               Office
             </h4>
@@ -59,34 +50,29 @@ export default function Footer() {
               <p>Riga, Latvia</p>
               <p className="mt-4">
                 <a
-                  href="mailto:press@emxsports.com"
+                  href="mailto:promotion@emxsports.com"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  press@emxsports.com
+                  promotion@emxsports.com
                 </a>
               </p>
             </div>
-          </div>
-
-          {/* Social */}
-          <div className="flex sm:justify-end items-start">
-            <div className="flex gap-5">
-              {socials.map(({ icon: Icon, href, label }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="text-gray-600 hover:text-white transition-colors duration-300"
-                >
-                  <Icon size={18} />
-                </Link>
-              ))}
+            <div className="mt-6">
+              <a
+                href="https://www.instagram.com/emx.sports/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-600 hover:text-white transition-colors duration-300"
+              >
+                <Instagram size={18} />
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
+      {/* Bottom bar */}
       <div className="border-t border-white/5 py-5 sm:py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-700 text-[10px] sm:text-xs tracking-wider">

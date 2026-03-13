@@ -133,7 +133,7 @@ export default async function FighterPage({
                 {fighter.ranking && (
                   <div className="col-span-2">
                     <span className="text-gray-500 font-heading text-[10px] tracking-widest uppercase block mb-1">
-                      World Ranking
+                      Status
                     </span>
                     <span className="text-[#c41e3a] font-heading font-bold text-lg">
                       {fighter.ranking}

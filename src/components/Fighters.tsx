@@ -29,25 +29,20 @@ export default function Fighters() {
                   className="w-full h-full object-cover object-top opacity-50 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700 absolute inset-0"
                   style={{ minHeight: 420 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-
-                {fighter.ranking && (
-                  <div className="absolute top-5 left-5">
-                    <span className="text-[#c41e3a] font-heading text-[10px] tracking-[0.2em] uppercase bg-black/60 backdrop-blur-sm px-2.5 py-1">
-                      {fighter.ranking}
-                    </span>
-                  </div>
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                   <div className="text-gray-400 font-heading text-[10px] tracking-[0.25em] uppercase mb-1.5">
                     {fighter.weightClass}
                   </div>
-                  <h3 className="font-heading font-bold text-xl sm:text-2xl uppercase text-white leading-tight">
+                  <h3 className="font-heading font-bold text-xl sm:text-2xl uppercase text-white leading-tight" style={{ textShadow: '0 2px 8px rgba(0,0,0,1)' }}>
                     {fighter.name}
                   </h3>
                   {fighter.nickname && (
-                    <div className="text-gray-300 font-heading text-xs italic mt-1.5">
+                    <div
+                      className="font-heading text-sm italic mt-1.5 text-white/90"
+                      style={{ textShadow: '0 1px 6px rgba(0,0,0,1), 0 0 12px rgba(0,0,0,0.9)' }}
+                    >
                       &ldquo;{fighter.nickname}&rdquo;
                     </div>
                   )}
@@ -59,6 +54,17 @@ export default function Fighters() {
                       {fighter.kos} KOs
                     </span>
                   </div>
+                  {fighter.titles && fighter.titles.length > 0 && (
+                    <div className="mt-3 pt-3 border-t border-white/10 flex items-start gap-2">
+                      <span className="text-base leading-none mt-0.5 flex-shrink-0">🏆</span>
+                      <span
+                        className="text-amber-400 font-heading text-[10px] tracking-[0.15em] uppercase leading-snug"
+                        style={{ textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}
+                      >
+                        {fighter.titles[fighter.titles.length - 1].replace(/ —.*$/, '')}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </Link>
